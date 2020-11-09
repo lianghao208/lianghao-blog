@@ -1,1 +1,1 @@
-![](../../static/img/lianghao-about.jpg)  **_Liang Hao_** 
+![](/img/lianghao-about.jpg)  **_Liang Hao_** 
