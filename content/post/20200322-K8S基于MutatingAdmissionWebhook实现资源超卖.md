@@ -1,5 +1,5 @@
 ﻿---
-title: "K8S-APIServer日志报 has no resources 的分析"
+title: "Kubernetes 基于 MutatingAdmissionWebhook 实现资源超卖"
 date: 2020-03-22T14:24:26+08:00
 draft: false
 ---
