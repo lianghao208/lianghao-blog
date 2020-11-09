@@ -3,7 +3,7 @@ title: "K8S-APIServer日志报 has no resources 的分析"
 date: 2020-09-06T14:24:26+08:00
 draft: false
 ---
-@[TOC]
+
 ## 一、现象
 在生产环境中遇到 api-server 服务发生陆续重启的现象， 查看监控，APIServer 所在的 master 节点的CPU、内存和网络流量发生抖动。
 在 APIServer 日志中可以看到日志中存在 it has no resources 的警告日志：
