@@ -2,6 +2,8 @@
 title: "Openshift中Route的HAProxy实现无缝重载原理分析"
 date: 2020-05-30T14:24:26+08:00
 draft: false
+tags:
+    - Haproxy
 ---
 
 ## 一、背景

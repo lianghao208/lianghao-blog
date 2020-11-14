@@ -2,6 +2,9 @@
 title: "K8S调度器Schduler工作原理--Priority优选算法中的抢占机制"
 date: 2020-05-22T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - Scheduler
 ---
 
 ## 一、为什么需要抢占机制

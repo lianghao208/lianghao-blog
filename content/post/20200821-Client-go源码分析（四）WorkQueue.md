@@ -2,6 +2,9 @@
 title: "Client-go源码分析（四）WorkQueue"
 date: 2020-08-21T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - Informer
 ---
 
 ## 一、WorkQueue 简介

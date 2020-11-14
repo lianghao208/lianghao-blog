@@ -2,6 +2,9 @@
 title: "Client-go源码分析（三）Informer机制"
 date: 2020-08-12T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - Informer
 ---
 
 ## 一、简介

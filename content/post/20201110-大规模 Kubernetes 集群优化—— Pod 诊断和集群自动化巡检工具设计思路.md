@@ -2,6 +2,8 @@
 title: "大规模 Kubernetes 集群优化—— Pod 诊断和集群自动化巡检工具设计思路"
 date: 2020-11-10T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
 ---
 
 ## 前言

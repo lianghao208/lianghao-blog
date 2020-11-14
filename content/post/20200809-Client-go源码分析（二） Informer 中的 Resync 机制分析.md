@@ -2,6 +2,9 @@
 title: "Client-go源码分析（二） Informer 中的 Resync 机制分析"
 date: 2020-08-09T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - Informer
 ---
 ## 一、Client-go 中的 Informer 工作流程图
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200809094552541.png)

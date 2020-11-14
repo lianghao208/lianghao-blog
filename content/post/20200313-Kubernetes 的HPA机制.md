@@ -2,6 +2,9 @@
 title: "Kubernetes 的HPA机制"
 date: 2020-03-13T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - HPA
 ---
 
 # 一、HPA简介

@@ -2,6 +2,9 @@
 title: "Kubernetes Scheduler Framework 插件化后的应用和思考"
 date: 2020-11-13T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - Scheduler
 ---
 
 ## 一、前言

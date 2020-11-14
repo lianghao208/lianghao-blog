@@ -2,6 +2,9 @@
 title: "K8S调度器Schduler工作原理--Priority优选算法过程分析"
 date: 2020-01-14T14:24:26+08:00
 draft: false
+tags:
+    - Kubernetes
+    - Scheduler
 ---
 
 # Scheduler工作流程
