@@ -41,7 +41,7 @@ Deployment 滚动更新时会先创建新 pod，等待新 pod running 后再删�
 ![图 3 - Deployment 更新时序图](https://img-blog.csdnimg.cn/20200607141054523.png)
 
 
-#### Pod
+#### Pod 删除过程
 pod 状态变更：将 Pod 设置为 Terminating 状态，并从所有 Service 的 Endpoints 列表中删除。此时，Pod 停止获得新的流量，但在 Pod 中运行的容器不会受到影响；
 
 执行 preStop Hook：Pod 删除时会触发 preStop Hook，preStop Hook 支持 bash 脚本、TCP 或 HTTP 请求；
@@ -53,6 +53,7 @@ pod 状态变更：将 Pod 设置为 Terminating 状态，并从所有 Service �
 发送 SIGKILL 信号：等待指定时间后，向 pod 中的容器发送 SIGKILL 信号，删除 pod。
 
 
+#### Endpoints 删除不及时
 
 **中断原因**：上述 1、2、3、4 步骤同时进行，因此有可能存在 Pod 收到 SIGTERM 信号并且停止工作后，还未从 Endpoints 中移除的情况。此时，请求从 lb 转发到 pod 中，而 Pod 已经停止工作，因此会出现服务中断，如图 4 所示。
 
@@ -62,7 +63,7 @@ pod 状态变更：将 Pod 设置为 Terminating 状态，并从所有 Service �
 
 
 
-#### iptables/ipvs
+#### iptables/ipvs 规则删除不及时
 
 **中断原因**：当 pod 变为 termintaing 状态时，会从所有 service 的 endpoint 中移除该 pod。kube-proxy 会清理对应的 iptables/ipvs 条目。而容器服务 watch 到 endpoint 变化后，会调用 lb openapi 移除后端，此操作会耗费几秒。由于这两个操作是同时进行，因此有可能存在节点上的 iptables/ipvs 条目已经被清理，但是节点还未从 lb 移除的情况。此时，流量从 lb 流入，而节点上已经没有对应的 iptables/ipvs 规则导致服务中断，如图 5 所示。
 
@@ -228,16 +229,6 @@ strategy:
 
 
 ### 3. 结论
-
-#### Terway 网络模式 （推荐方式）
-
-
-选用 ENI 模式的 svc + 设定 Pod 优雅终止 + 就绪检测。
-
-
-
-#### Flannel 网络模式
-
 
 如果集群中 lb 数量不多且不需要保留源 ip：选用 cluster 模式 + 设定 Pod 优雅终止 + 就绪检测；
 
