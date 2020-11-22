@@ -88,9 +88,9 @@ home = ["HTML", "RSS", "Algolia"]
   title = "PingCAP付业成"
   href =  "https://yechengfu.com/"
   [[params.friend_link]]
-  [[params.friend_link]]
   title = "字节跳动draveness"
   href =  "https://draveness.me/"
+  [[params.friend_link]]
   title = "张馆长"
   href =  "https://zhangguanzhang.github.io/"
   [[params.friend_link]]
