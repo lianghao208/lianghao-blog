@@ -82,17 +82,20 @@ home = ["HTML", "RSS", "Algolia"]
   #git           = "full profile url for git user"
 
   [[params.friend_link]]
+  title = "腾讯云yousa"
+  href =  "https://yousali.me/"
+  [[params.friend_link]]
+  title = "PingCAP付业成"
+  href =  "https://yechengfu.com/"
+  [[params.friend_link]]
+  [[params.friend_link]]
+  title = "字节跳动draveness"
+  href =  "https://draveness.me/"
   title = "张馆长"
   href =  "https://zhangguanzhang.github.io/"
   [[params.friend_link]]
-  title = "yousa"
-  href =  "https://yousali.me/"
-  [[params.friend_link]]
   title = "sealyun"
   href =  "https://sealyun.com/"
-  [[params.friend_link]]
-  title = "draveness"
-  href =  "https://draveness.me/"
   [[params.friend_link]]
   title = "golang后端dino"
   href =  "https://blog.walkbc.com/"
