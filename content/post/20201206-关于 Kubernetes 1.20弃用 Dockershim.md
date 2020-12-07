@@ -19,7 +19,7 @@ tags:
 - 容器要需要能接收哪些指令，这些指令的行为是什么，即 RuntimeSpec。这里面的大致内容就是“容器”要能够执行 “create”，“start”，“stop”，“delete” 这些命令，并且行为要规范。
 
 Docker 把 libcontainer 封装了一下，变成 runC 捐献出来作为 OCI 的参考实现。
-Docker安装成功后，容器引擎运行着两个守护进程分别是dockerd和docker-containerd。当有新的容器被创建时，Docker 会创建新的进程 docker-containerd-shim，从而控制底层的 runc。
+Docker 安装成功后，容器引擎运行着两个守护进程分别是 dockerd 和 docker-containerd。当有新的容器被创建时，Docker 会创建新的进程 docker-containerd-shim，从而控制底层的 runc。
 ### CRI（容器运行时接口）
 本质上是**一组 gRPC 接口**：
 - 操作容器的接口，包括创建、启停容器等
@@ -32,7 +32,7 @@ Docker安装成功后，容器引擎运行着两个守护进程分别是dockerd�
 由于 Kubelet 通过调用 Docker 从而操作容器的实现方式太过复杂，Kubernetes 后来推出了 CRI-O 的概念逐渐将 Docker 边缘化。CRI-O 就是一个兼容 CRI 和 OCI 的 Kubernetes 专用容器运行时实现。
 ![CRI-O](https://img-blog.csdnimg.cn/20201206200322806.png)
 早在2020年的7月份，Kubernetes 社区就出现了移除 dockershim 的提案：[https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/1985-remove-dockershim](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/1985-remove-dockershim)
-在Kubernetes 1.20 中使用 Docker 作为运行时，在kubelet启动时打印一个警告日志。（目前并没有移除，只是弃用，官方表示它不会在 Kubernetes 1.22 之前被删除，这意味着最早不使用 dockershim 的版本将是2021年底的1.23）
+在 Kubernetes 1.20 中使用 Docker 作为运行时，在kubelet启动时打印一个警告日志。（目前并没有移除，只是弃用，官方表示它不会在 Kubernetes 1.22 之前被删除，这意味着最早不使用 dockershim 的版本将是2021年底的1.23）
 ## 四、对运维和开发人员的影响
 对开发人员而言，构建镜像时仍然可以使用 Docker，因为其满足 OCI 标准，构建出来的镜像自然满足 OCI。无论你使用什么工具构建它，任何符合 OCI 标准的镜像在 Kubernetes 看来都是一样的。
 而对于运维人员而言，想要操作运行时的容器，crictl 看似一个不错的选择，当然这也可能带来一定的时间成本。
