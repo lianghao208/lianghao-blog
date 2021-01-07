@@ -1,7 +1,7 @@
 ---
 title: "混沌工程-Chaos Mesh初探"
 date: 2020-12-24T14:24:26+08:00
-draft: false
+draft: true
 tags:
     - Kubernetes
     - ChaosMesh
